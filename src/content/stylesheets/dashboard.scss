@@ -1,0 +1,220 @@
+@use "./colors.scss" as c;
+@import "./mixins.scss";
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 12vh;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .dashboard {
+    box-shadow: 0px 0px 36px -8px c.$DarkBlue;
+    -webkit-box-shadow: 0px 0px 36px -8px c.$DarkBlue;
+    -moz-box-shadow: 0px 0px 36px -8px c.$DarkBlue;
+    width: 60%;
+    background-color: c.$White;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include desktop() {
+      width: 95% !important;
+    }
+  }
+  .dashboard-nav {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    > * {
+      transition: all 0.2s;
+    }
+    span {
+      font-size: 3em;
+      color: c.$Grey;
+    }
+    > *:hover {
+      cursor: pointer;
+      color: c.$Black !important;
+    }
+    @include desktop() {
+      gap: 3px;
+      padding: 10px;
+      h3 {
+        font-size: 1em;
+        width: 100%;
+      }
+    }
+  }
+  .dashboard-content {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include desktop() {
+      padding: 10px;
+    }
+  }
+  .input-filter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    button {
+      font-size: 1em;
+      padding: 5px;
+      height: 100%;
+      margin: 0;
+    }
+    input {
+      border-style: none;
+      background-color: c.$SoftGrey;
+      width: 100%;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 2px;
+    }
+  }
+  .table-loading {
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: c.$SoftGrey;
+  }
+  .dashboard-grid {
+    width: 100%;
+    position: relative;
+    div {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border: solid c.$White 1px;
+      min-width: 10px;
+      max-width: 300px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-align: center;
+    }
+    .grid-function-button {
+      background-color: transparent;
+      color: c.$DarkBlue;
+      border: solid c.$DarkBlue 1px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .main-data-row {
+      background-color: c.$Black;
+      color: c.$White;
+    }
+    .table-empty {
+      grid-column: span 3;
+      max-width: none !important;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .data-even {
+      background-color: c.$White !important;
+    }
+    .data-odd {
+      background-color: c.$MainBackground;
+    }
+  }
+  .construction-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    min-height: 30vh;
+    border-radius: 10px;
+  }
+  .animated-bg-text {
+    background: -webkit-linear-gradient(
+      45deg,
+      c.$Red,
+      c.$DarkBlue,
+      c.$Red,
+      c.$Blue
+    );
+    background-size: 200%;
+    background-position: top left;
+    font-weight: 100;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: construction-animation-background 5s infinite ease-in-out;
+    z-index: 1;
+  }
+  .construction-bg {
+    animation: construction-animation 2s infinite linear;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("../images/tools.svg"),
+      linear-gradient(c.$SoftGrey, c.$SoftGrey);
+    opacity: 0.1;
+    z-index: 0;
+    background-size: 50px 50px;
+  }
+}
+hr {
+  border-color: c.$SoftGrey !important;
+}
+.payment-type {
+  width: 100%;
+  text-align: center;
+  margin: 0px 1em 10px 1em;
+  padding: 10px;
+  box-shadow: c.$SoftGrey 0px 0px 15px, c.$SoftGrey 0px 0px 3px 1px;
+  border-radius: 10px;
+  img {
+    height: 70px;
+  }
+}
+.payment-type:hover,
+.payment-type-active {
+  box-shadow: c.$TranslucentBlue 0px 0px 15px,
+    c.$TranslucentBlue 0px 0px 3px 1px;
+}
+@keyframes construction-animation-background {
+  0% {
+    background-position: top left;
+  }
+  50% {
+    background-position: bottom right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+@keyframes construction-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}

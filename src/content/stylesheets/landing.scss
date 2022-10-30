@@ -1,0 +1,164 @@
+@use "./colors.scss" as c;
+.jumbotron {
+  height: 100vh;
+  padding-top: 10vh;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  overflow-x: hidden !important;
+  justify-content: center;
+  align-items: center;
+}
+.jumbotron > div {
+  width: 100%;
+}
+.jumbo-title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 10%;
+}
+.white-box-title {
+  background-color: c.$White;
+  padding: 30px;
+  box-sizing: border-box;
+  color: c.$DarkBlue;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 5px 13px -2px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 13px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 13px -2px rgba(0, 0, 0, 0.75);
+}
+.white-box-title > h1 {
+  font-size: 4em;
+  font-weight: 100;
+}
+.blue-box-title {
+  position: relative;
+  background-color: c.$DarkBlue;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: c.$White;
+}
+.blue-box-title > h3 {
+  font-weight: 100;
+}
+.blue-box-title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(0% - 40px);
+  bottom: 0;
+  width: 40px;
+  background-color: c.$DarkBlue;
+  border-bottom-left-radius: 100%;
+}
+.post-jumbotron-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10vw;
+  gap: 1em;
+}
+.post-jumbotron-section > div {
+  width: 100%;
+}
+
+.post-jumbotron-section .post-jumbotron-text > h1 {
+  background: -webkit-linear-gradient(45deg, c.$Red, c.$Blue);
+  font-size: 4em;
+  font-weight: 100;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+}
+.que-hacemos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.que-hacemos > h1 {
+  font-size: 3em;
+}
+.que-hacemos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding: 0 10vw;
+}
+.que-hacemos-grid > div > p {
+  text-align: justify;
+  font-size: 1.3em;
+}
+.que-hacemos-grid > div > h3 {
+  font-size: 1.5em;
+}
+.que-hacemos-grid-section {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+.que-hacemos-grid-section-image {
+  flex: 1;
+  border-radius: 20px;
+  border: c.$Blue solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+}
+.que-hacemos-grid-section-text {
+  flex: 2;
+}
+.tarjetas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tarjetas-info {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+.tarjetas-info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: -webkit-linear-gradient(135deg, c.$Red, c.$Blue);
+}
+.tarjetas-info:last-of-type::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.5px;
+  background: -webkit-linear-gradient(135deg, c.$Red, c.$Blue);
+}
+.post-jumbotron-image {
+  border-radius: 20px;
+  border: c.$Blue solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+}
+@media (max-width: 758px) {
+  .post-jumbotron-section,
+  .jumbotron {
+    flex-direction: column;
+  }
+  .que-hacemos-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

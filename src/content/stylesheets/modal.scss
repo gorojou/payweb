@@ -1,0 +1,36 @@
+@use "./colors.scss" as c;
+.modal {
+  background-color: c.$TrasnparentGrey;
+  color: c.$White;
+  position: fixed;
+  top: 10vh;
+  right: 0;
+  left: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.go-in {
+  animation: 0.4s rollin;
+}
+.go-back {
+  animation: 0.4s rollout;
+}
+@keyframes rollin {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes rollout {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
