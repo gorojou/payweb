@@ -1,0 +1,22 @@
+@use "./colors.scss" as c;
+.input-container {
+  background: linear-gradient(45deg, c.$Blue, c.$Red);
+  border-radius: 20px;
+  position: relative;
+  height: 40px;
+}
+.input-container-box {
+  border: hidden;
+  position: absolute;
+  background: c.$White;
+  border-radius: 20px;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+  right: 1px;
+}
+.input-container-box input {
+  width: 100%;
+  height: 100%;
+  background-color: c.$White !important;
+}
