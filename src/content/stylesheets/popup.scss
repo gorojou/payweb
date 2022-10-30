@@ -1,0 +1,23 @@
+@use "./colors.scss" as c;
+.pop-up-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: c.$TrasnparentGrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999;
+  .pop-up {
+    background-color: c.$White;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
